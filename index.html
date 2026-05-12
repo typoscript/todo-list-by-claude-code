@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 인증 화면 -->
+  <div id="authSection" class="auth-section">
+    <div class="auth-box">
+      <h2 class="auth-title">Todo</h2>
+      <p class="auth-subtitle" id="authSubtitle">계정에 로그인하세요</p>
+      <form id="authForm">
+        <input type="email" id="authEmail" placeholder="이메일" required autocomplete="email" />
+        <input type="password" id="authPassword" placeholder="비밀번호 (6자 이상)" required minlength="6" autocomplete="current-password" />
+        <p id="authError" class="auth-error"></p>
+        <button type="submit" id="authSubmit">로그인</button>
+      </form>
+      <button type="button" id="authToggle" class="auth-toggle">계정이 없으신가요? 가입하기</button>
+    </div>
+  </div>
+
+  <!-- Todo 앱 화면 -->
+  <div id="appSection" class="hidden">
+    <div class="container">
+      <header>
+        <div class="header-top">
+          <h1>Todo</h1>
+          <div class="user-bar">
+            <span id="userEmailDisplay" class="user-email"></span>
+            <button id="logoutBtn" class="logout-btn">로그아웃</button>
+          </div>
+        </div>
+        <p class="date" id="today"></p>
+      </header>
+
+      <form class="input-area" id="todoForm">
+        <select id="prioritySelect">
+          <option value="high">높음</option>
+          <option value="medium" selected>보통</option>
+          <option value="low">낮음</option>
+        </select>
+        <input
+          type="text"
+          id="todoInput"
+          placeholder="할 일을 입력하세요"
+          autocomplete="off"
+          maxlength="200"
+        />
+        <button type="submit">추가</button>
+      </form>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">전체</button>
+        <button class="filter-btn" data-filter="active">미완료</button>
+        <button class="filter-btn" data-filter="done">완료</button>
+      </div>
+
+      <ul class="todo-list" id="todoList"></ul>
+
+      <footer class="footer" id="footer">
+        <span id="remaining"></span>
+        <button id="clearDone">완료 항목 삭제</button>
+      </footer>
+    </div>
+  </div>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
