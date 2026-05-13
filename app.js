@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
 const db = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
+  'https://ptphnhjrmtuxphaluffn.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB0cGhuaGpybXR1eHBoYWx1ZmZuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg1NjYxMTYsImV4cCI6MjA5NDE0MjExNn0.19PSe_Sr6o5vm-NcomSY6HHWbM3JOwNajKmoOBerKYg'
 );
 
 let todos = [];
